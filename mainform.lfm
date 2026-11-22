@@ -1,0 +1,861 @@
+object MainMenuForm: TMainMenuForm
+  Left = 1520
+  Height = 688
+  Top = 250
+  Width = 1200
+  Caption = 'Zenbit One'
+  ClientHeight = 688
+  ClientWidth = 1200
+  Constraints.MinHeight = 600
+  Constraints.MinWidth = 800
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  LCLVersion = '4.8.0.0'
+  OnShow = FormShow
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 665
+    Top = 0
+    Width = 1200
+    ActivePage = TabSheet_Transaksi
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = tpLeft
+    object TabSheet_Transaksi: TTabSheet
+      Caption = 'Monitoring'
+      ClientHeight = 661
+      ClientWidth = 1125
+      object StringGrid_TransaksiList: TStringGrid
+        Left = 0
+        Height = 472
+        Top = 67
+        Width = 1127
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ColCount = 13
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Caption = 'Waktu Entri'
+            Width = 86
+          end        
+          item
+            Title.Caption = 'Waktu Status'
+            Width = 86
+          end        
+          item
+            Title.Caption = 'Produk'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Tujuan'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'SN'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Status'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Modul'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Trx ID'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Harga Beli'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Harga Jual'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Laba'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Reff ID'
+            Width = 85
+          end        
+          item
+            Title.Caption = 'Jawaban Provider'
+            Width = 85
+          end>
+        DefaultColWidth = 30
+        DefaultRowHeight = 32
+        FixedCols = 0
+        Flat = True
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goRowSizing, goColSizing, goColMoving, goAutoAddRows, goDblClickAutoSize, goSmoothScroll, goHeaderPushedLook, goSelectionActive]
+        RangeSelectMode = rsmMulti
+        RowCount = 1
+        ScrollBars = ssBoth
+        TabOrder = 19
+        TitleStyle = tsNative
+        ColWidths = (
+          86
+          86
+          85
+          85
+          85
+          85
+          85
+          85
+          85
+          85
+          85
+          85
+          85
+        )
+      end
+      object Memo_JawabanProvider: TMemo
+        Left = 5
+        Height = 110
+        Top = 544
+        Width = 604
+        Anchors = [akLeft, akRight, akBottom]
+        Lines.Strings = (
+          'Jawaban Provider'
+        )
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 13
+      end
+      object DateTimePicker_TglAwalFilter: TDateTimePicker
+        Left = 68
+        Height = 25
+        Top = 4
+        Width = 91
+        ArrowShape = asModernLarger
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        AutoButtonSize = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object DateTimePicker_TglAkhirFilter: TDateTimePicker
+        Left = 68
+        Height = 25
+        Top = 35
+        Width = 91
+        ArrowShape = asModernLarger
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 1
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        AutoButtonSize = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label_TglAwalFilter: TLabel
+        Left = 8
+        Height = 17
+        Top = 8
+        Width = 46
+        Caption = 'Tgl Awal'
+      end
+      object Label_TglAkhirFilter: TLabel
+        Left = 8
+        Height = 17
+        Top = 39
+        Width = 48
+        Caption = 'Tgl Akhir'
+      end
+      object ComboBox_Filter1: TComboBox
+        Left = 175
+        Height = 25
+        Top = 4
+        Width = 155
+        AutoSelect = False
+        ItemHeight = 0
+        Items.Strings = (
+          'Tujuan'
+          'Produk'
+          'SN'
+          'TrxID'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 2
+        TextHint = 'Filter 1'
+      end
+      object Edit_FilterBox1: TEdit
+        Left = 175
+        Height = 25
+        Top = 35
+        Width = 155
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 8
+        TextHint = 'Filter 1'
+      end
+      object ComboBox_Filter_ModulSpl: TComboBox
+        Left = 665
+        Height = 25
+        Top = 35
+        Width = 155
+        AutoSelect = False
+        ItemHeight = 0
+        Items.Strings = (
+          'XMPP: XML'
+          'XMPP: LoketBayar'
+          'XMPP: OpenH2H'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 11
+        TextHint = 'Status'
+      end
+      object ComboBox_Filter_StatusTrx: TComboBox
+        Left = 665
+        Height = 25
+        Top = 4
+        Width = 155
+        AutoSelect = False
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          'Proses'
+          'Gagal'
+          'Sukses'
+          'Tujuan Salah'
+          'Semua Status'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 5
+        Text = 'Proses'
+        TextHint = 'Modul'
+      end
+      object ComboBox_Filter2: TComboBox
+        Left = 339
+        Height = 25
+        Top = 4
+        Width = 155
+        AutoSelect = False
+        ItemHeight = 0
+        Items.Strings = (
+          'Tujuan'
+          'Produk'
+          'SN'
+          'TrxID'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 3
+        TextHint = 'Filter 1'
+      end
+      object Edit_FilterBox2: TEdit
+        Left = 339
+        Height = 25
+        Top = 35
+        Width = 155
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 9
+        TextHint = 'Filter 2'
+      end
+      object ComboBox_Filter3: TComboBox
+        Left = 501
+        Height = 25
+        Top = 4
+        Width = 155
+        AutoSelect = False
+        ItemHeight = 0
+        Items.Strings = (
+          'Tujuan'
+          'Produk'
+          'SN'
+          'TrxID'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 4
+        TextHint = 'Filter 1'
+      end
+      object Edit_FilterBox3: TEdit
+        Left = 501
+        Height = 25
+        Top = 35
+        Width = 155
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 10
+        TextHint = 'Filter 3'
+      end
+      object Button_Refresh: TButton
+        Left = 943
+        Height = 25
+        Top = 4
+        Width = 104
+        Caption = 'Refresh'
+        TabOrder = 7
+      end
+      object Button_Reset: TButton
+        Left = 833
+        Height = 25
+        Top = 4
+        Width = 104
+        Caption = 'Reset'
+        TabOrder = 6
+        OnClick = Button_ResetClick
+      end
+      object SpinEdit_AutoRefreshInterval: TSpinEdit
+        Left = 722
+        Height = 25
+        Top = 568
+        Width = 47
+        Anchors = [akRight, akBottom]
+        MaxValue = 60
+        MinValue = 1
+        TabOrder = 16
+        Value = 1
+      end
+      object CheckBox_AutoRefresh: TCheckBox
+        Left = 620
+        Height = 21
+        Top = 569
+        Width = 95
+        Anchors = [akRight, akBottom]
+        Caption = 'Auto Refresh'
+        Checked = True
+        State = cbChecked
+        TabOrder = 15
+      end
+      object Label_Detik: TLabel
+        Left = 775
+        Height = 22
+        Top = 569
+        Width = 36
+        Anchors = [akRight, akBottom]
+        Caption = 'Detik'
+        Font.Height = -15
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object CheckBox_AutoFillColumn: TCheckBox
+        Left = 620
+        Height = 21
+        Top = 544
+        Width = 110
+        Anchors = [akRight, akBottom]
+        Caption = 'AutoFill Column'
+        TabOrder = 14
+        OnChange = CheckBox_AutoFillColumnChange
+      end
+      object Label_BulkAction: TLabel
+        Left = 827
+        Height = 17
+        Top = 544
+        Width = 123
+        Anchors = [akRight, akBottom]
+        AutoSize = False
+        Caption = 'Aksi Banyak Sekaligus'
+      end
+      object ComboBox_BulkAction: TComboBox
+        Left = 827
+        Height = 29
+        Top = 566
+        Width = 226
+        Anchors = [akRight, akBottom]
+        ItemHeight = 0
+        Style = csDropDownList
+        TabOrder = 17
+      end
+      object Button_ExecuteBulkAction: TButton
+        Left = 1059
+        Height = 29
+        Top = 566
+        Width = 64
+        Anchors = [akRight, akBottom]
+        Caption = 'Jalankan'
+        TabOrder = 18
+      end
+      object Button_AturKolom: TButton
+        Left = 833
+        Height = 25
+        Top = 35
+        Width = 104
+        Caption = 'Atur Kolom'
+        TabOrder = 12
+      end
+      object Label_CountProses: TLabel
+        Left = 620
+        Height = 17
+        Top = 594
+        Width = 44
+        Anchors = [akRight, akBottom]
+        Caption = 'Proses :'
+      end
+      object Label_CountSukses: TLabel
+        Left = 620
+        Height = 17
+        Top = 615
+        Width = 45
+        Anchors = [akRight, akBottom]
+        Caption = 'Sukses :'
+      end
+      object Label_CountGagal: TLabel
+        Left = 620
+        Height = 17
+        Top = 637
+        Width = 39
+        Anchors = [akRight, akBottom]
+        Caption = 'Gagal :'
+      end
+      object Label_NoOfProses: TLabel
+        Left = 673
+        Height = 17
+        Top = 594
+        Width = 14
+        Anchors = [akRight, akBottom]
+        Caption = '50'
+      end
+      object Label_NoOfSukses: TLabel
+        Left = 673
+        Height = 17
+        Top = 615
+        Width = 14
+        Anchors = [akRight, akBottom]
+        Caption = '10'
+      end
+      object Label_NoOfGagal: TLabel
+        Left = 673
+        Height = 17
+        Top = 637
+        Width = 7
+        Anchors = [akRight, akBottom]
+        Caption = '0'
+      end
+    end
+    object TabSheet_Produk: TTabSheet
+      Caption = 'Produk'
+      ClientHeight = 661
+      ClientWidth = 1125
+      object PageControl_Produk: TPageControl
+        Left = -1
+        Height = 665
+        Top = -2
+        Width = 1127
+        ActivePage = TabSheet_GrupHarga
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        Style = tsFlatButtons
+        TabIndex = 2
+        TabOrder = 0
+        object TabSheet_Providers: TTabSheet
+          Caption = 'Providers'
+          ClientHeight = 634
+          ClientWidth = 1123
+          object StringGrid_ListProviders: TStringGrid
+            Left = 0
+            Height = 569
+            Top = 64
+            Width = 1124
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            AutoAdvance = aaDown
+            ColCount = 9
+            ColumnClickSorts = True
+            Columns = <            
+              item
+                Alignment = taCenter
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Tersedia'
+                Width = 138
+              end            
+              item
+                Alignment = taCenter
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Gangguan'
+                Width = 138
+              end            
+              item
+                Title.Caption = 'Kode'
+                Width = 138
+              end            
+              item
+                Title.Caption = 'Nama'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Prefix Tujuan'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Min. Tujuan'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Max. Tujuan'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Note'
+                Width = 137
+              end>
+            DefaultColWidth = 24
+            DefaultRowHeight = 24
+            Flat = True
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goColMoving, goEditing, goAutoAddRows, goDblClickAutoSize, goSmoothScroll, goHeaderHotTracking, goHeaderPushedLook]
+            ScrollBars = ssBoth
+            TabOrder = 0
+            ColWidths = (
+              24
+              138
+              138
+              138
+              137
+              137
+              137
+              137
+              137
+            )
+          end
+          object LabeledEdit_CariKodeProvider: TLabeledEdit
+            Left = 5
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Kode Provider'
+            TabOrder = 1
+          end
+          object LabeledEdit_CariNamaProvider: TLabeledEdit
+            Left = 170
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Nama Provider'
+            TabOrder = 2
+          end
+          object Button_CariProviders: TButton
+            Left = 343
+            Height = 25
+            Top = 25
+            Width = 75
+            Caption = 'Cari'
+            TabOrder = 3
+          end
+          object ToggleBox_AutoFillKolumProvider: TToggleBox
+            Left = 513
+            Height = 25
+            Top = 25
+            Width = 114
+            Caption = 'AutoFill Kolum'
+            TabOrder = 4
+            OnChange = ToggleBox_AutoFillKolumProviderChange
+          end
+          object ComboBox_BulkActionProvider: TComboBox
+            Left = 825
+            Height = 25
+            Top = 25
+            Width = 205
+            Anchors = [akTop, akRight]
+            ItemHeight = 0
+            Items.Strings = (
+              'Set Provider Tersedia'
+              'Set Provider Tidak Tersedia'
+              'Set Provider Gangguan'
+              'Set Provider Tidak Gangguan'
+            )
+            Style = csDropDownList
+            TabOrder = 5
+          end
+          object Button_SimpanPerubahanProviders: TButton
+            Left = 428
+            Height = 25
+            Top = 25
+            Width = 75
+            Caption = 'Simpan'
+            TabOrder = 6
+          end
+          object Button_JalankanBulkProvider: TButton
+            Left = 1040
+            Height = 25
+            Top = 25
+            Width = 75
+            Anchors = [akTop, akRight]
+            Caption = 'Jalankan'
+            TabOrder = 7
+          end
+        end
+        object TabSheet_Produks: TTabSheet
+          Caption = 'Produks'
+          ClientHeight = 634
+          ClientWidth = 1123
+          object StringGrid_ListProduks: TStringGrid
+            Left = 0
+            Height = 569
+            Top = 64
+            Width = 1124
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            AutoAdvance = aaDown
+            ColCount = 12
+            ColumnClickSorts = True
+            Columns = <            
+              item
+                Alignment = taCenter
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Aktif'
+                Width = 138
+              end            
+              item
+                Title.Caption = 'Kode Produk'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Nama'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Provider'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Nominal'
+                Width = 64
+              end            
+              item
+                Title.Caption = 'Harga Beli'
+                Width = 64
+              end            
+              item
+                Title.Caption = 'Harga Jual'
+                Width = 64
+              end            
+              item
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Kosong'
+                Width = 138
+              end            
+              item
+                Alignment = taCenter
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Gangguan'
+                Width = 138
+              end            
+              item
+                Title.Caption = 'Prefix Tujuan'
+                Width = 137
+              end            
+              item
+                Title.Caption = 'Note'
+                Width = 137
+              end>
+            DefaultColWidth = 24
+            DefaultRowHeight = 24
+            Flat = True
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goColMoving, goEditing, goAutoAddRows, goDblClickAutoSize, goSmoothScroll, goHeaderHotTracking, goHeaderPushedLook]
+            ScrollBars = ssBoth
+            TabOrder = 0
+            ColWidths = (
+              24
+              138
+              137
+              137
+              137
+              64
+              64
+              64
+              138
+              138
+              137
+              137
+            )
+          end
+          object LabeledEdit_CariKodeProduk: TLabeledEdit
+            Left = 5
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Kode Produk'
+            TabOrder = 1
+          end
+          object LabeledEdit_CariNamaProduk: TLabeledEdit
+            Left = 170
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Nama Produk'
+            TabOrder = 2
+          end
+          object Button_CariProduk: TButton
+            Left = 343
+            Height = 25
+            Top = 25
+            Width = 75
+            Caption = 'Cari'
+            TabOrder = 3
+          end
+          object Button_SimpanPerubahanProduk: TButton
+            Left = 428
+            Height = 25
+            Top = 25
+            Width = 75
+            Caption = 'Simpan'
+            TabOrder = 4
+          end
+          object ToggleBox_AutoFillKolumProduk: TToggleBox
+            Left = 513
+            Height = 25
+            Top = 25
+            Width = 114
+            Caption = 'AutoFill Kolum'
+            TabOrder = 5
+            OnChange = ToggleBox_AutoFillKolumProdukChange
+          end
+          object ComboBox_BulkActionProduk: TComboBox
+            Left = 825
+            Height = 25
+            Top = 25
+            Width = 205
+            Anchors = [akTop, akRight]
+            ItemHeight = 0
+            Items.Strings = (
+              'Set Produk Tersedia'
+              'Set Produk Tidak Tersedia'
+              'Set Produk Gangguan'
+              'Set Produk Tidak Gangguan'
+            )
+            Style = csDropDownList
+            TabOrder = 6
+          end
+          object Button_JalankanBulkProduk: TButton
+            Left = 1040
+            Height = 25
+            Top = 25
+            Width = 75
+            Anchors = [akTop, akRight]
+            Caption = 'Jalankan'
+            TabOrder = 7
+          end
+        end
+        object TabSheet_GrupHarga: TTabSheet
+          Caption = 'Grup Harga'
+          ClientHeight = 634
+          ClientWidth = 1123
+          object LabeledEdit_CariNamaGrup: TLabeledEdit
+            Left = 5
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Nama Grup'
+            ParentShowHint = False
+            TabOrder = 0
+          end
+          object LabeledEdit_CariProdukHrgGrup: TLabeledEdit
+            Left = 169
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Nama Produk'
+            ParentShowHint = False
+            TabOrder = 1
+          end
+          object LabeledEdit_CariProviderHrgGrup: TLabeledEdit
+            Left = 334
+            Height = 25
+            Top = 25
+            Width = 155
+            EditLabel.Height = 17
+            EditLabel.Width = 155
+            EditLabel.Caption = 'Cari Nama Provider'
+            ParentShowHint = False
+            TabOrder = 2
+          end
+          object StringGrid1: TStringGrid
+            Left = 0
+            Height = 569
+            Top = 64
+            Width = 1124
+            TabOrder = 3
+          end
+        end
+        object TabSheet_ParsingProduk: TTabSheet
+          Caption = 'Parsing Produk'
+        end
+      end
+    end
+    object TabSheet_Reseller: TTabSheet
+      Caption = 'Reseller'
+    end
+    object TabSheet_Modul: TTabSheet
+      Caption = 'Modul'
+    end
+  end
+  object Label_RealTimeDateTime: TLabel
+    Left = 1135
+    Height = 17
+    Top = 667
+    Width = 58
+    Anchors = [akRight, akBottom]
+    Caption = 'Date Time'
+  end
+  object Label_AccountName: TLabel
+    Left = 904
+    Height = 17
+    Top = 667
+    Width = 36
+    Anchors = [akRight, akBottom]
+    Caption = 'Admin'
+  end
+  object MainMenu1: TMainMenu
+    Left = 30
+    Top = 654
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+    end
+  end
+  object Timer_DateAndTimeRefresh: TTimer
+    OnTimer = Timer_DateAndTimeRefreshTimer
+    Top = 652
+  end
+end
